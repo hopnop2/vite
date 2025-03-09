@@ -1,0 +1,102 @@
+.fruit-card {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 16px;
+  }
+  
+  .fruit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .fruit-image-container {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .fruit-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .fruit-image.zoomed {
+    transform: scale(1.1);
+  }
+  
+  .out-of-stock-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .origin-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+  }
+  
+  .fruit-content {
+    padding: 16px;
+  }
+  
+  .fruit-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    color: #2e7d32;
+  }
+  
+  .fruit-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e65100;
+    margin-bottom: 8px;
+  }
+  
+  .fruit-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  
+  .add-to-cart-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-to-cart-button:hover:not(:disabled) {
+    background-color: #1b5e20;
+  }
+  
+  .add-to-cart-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  

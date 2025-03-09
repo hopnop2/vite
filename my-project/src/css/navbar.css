@@ -1,0 +1,287 @@
+/* กำหนดตัวแปรสี - เน้นธีมผลไม้มากขึ้น */
+:root {
+    /* สีหลักของร้าน - โทนสีธรรมชาติ */
+    --fruit-green-light: #8bc34a;
+    --fruit-green-medium: #4caf50;
+    --fruit-green-dark: #2e7d32;
+    
+    /* สีเน้นสำหรับผลไม้ต่างๆ */
+    --fruit-red: #e53935;      /* แอปเปิ้ล, แตงโม */
+    --fruit-orange: #ff9800;   /* ส้ม */
+    --fruit-yellow: #fdd835;   /* กล้วย, สับปะรด */
+    --fruit-purple: #8e24aa;   /* องุ่น */
+    
+    /* สีพื้นหลังและข้อความ */
+    --bg-light: #f9f9f9;
+    --bg-white: #ffffff;
+    --text-dark: #212121;
+    --text-medium: #424242;
+    --text-light: #757575;
+    
+    /* ขนาดของรัศมีมุม */
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 24px;
+    --border-radius-full: 9999px;
+  }
+  
+  /* สไตล์ทั่วไป */
+  body {
+    font-family: 'Prompt', 'Noto Sans Thai', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+  }
+  
+  /* เอฟเฟกต์เมื่อเลื่อนลงสำหรับองค์ประกอบต่างๆ */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Navbar สไตล์ใหม่ */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(to right, var(--fruit-green-medium), var(--fruit-green-light));
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar.scrolled {
+    background-image: linear-gradient(to right, var(--fruit-green-dark), var(--fruit-green-medium));
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .navbar-logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-image: linear-gradient(to right, var(--fruit-yellow), #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-link {
+    position: relative;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-full);
+    transition: all 0.2s ease;
+  }
+  
+  .navbar-link:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .navbar-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--fruit-yellow);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .navbar-link:hover::after {
+    width: 70%;
+  }
+  
+  /* สไตล์การ์ดผลไม้ */
+  .fruit-card {
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease;
+  }
+  
+  .fruit-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fruit-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+  }
+  
+  .fruit-card:hover .fruit-image {
+    transform: scale(1.08);
+  }
+  
+  .fruit-price {
+    color: var(--fruit-red);
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .fruit-title {
+    color: var(--fruit-green-dark);
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+  
+  .fruit-origin {
+    background-color: var(--fruit-yellow);
+    color: var(--text-dark);
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: var(--border-radius-full);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  /* สไตล์ปุ่ม */
+  .btn-primary {
+    background-image: linear-gradient(to right, var(--fruit-green-medium), var(--fruit-green-light));
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--border-radius-full);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2);
+  }
+  
+  .btn-primary:hover {
+    background-image: linear-gradient(to right, var(--fruit-green-dark), var(--fruit-green-medium));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.3);
+  }
+  
+  .btn-outline {
+    background: transparent;
+    color: var(--fruit-green-medium);
+    border: 2px solid var(--fruit-green-medium);
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--border-radius-full);
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline:hover {
+    background-color: var(--fruit-green-medium);
+    color: white;
+  }
+  
+  /* รูปแบบแผนกผลไม้ */
+  .category-section {
+    position: relative;
+    padding: 3rem 0;
+  }
+  
+  .category-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/fruit-pattern.png');
+    background-size: 200px;
+    opacity: 0.04;
+    z-index: -1;
+  }
+  
+  .category-title {
+    font-size: 2rem;
+    color: var(--fruit-green-dark);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .category-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--fruit-yellow);
+    border-radius: var(--border-radius-full);
+  }
+  
+  /* สไตล์ส่วนค้นหา */
+  .search-input {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: var(--border-radius-full);
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .search-input:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: var(--fruit-yellow);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(253, 216, 53, 0.3);
+  }
+  
+  /* แบดจ์จำนวนในตะกร้า */
+  .cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--fruit-red);
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 2px solid white;
+  }
+  
+  /* สำหรับหน้าจอแสดงผลขนาดต่างๆ */
+  @media (max-width: 768px) {
+    .mobile-menu {
+      background-color: var(--fruit-green-dark);
+      padding: 1rem;
+      border-bottom-left-radius: var(--border-radius-md);
+      border-bottom-right-radius: var(--border-radius-md);
+    }
+    
+    .mobile-menu .navbar-link {
+      padding: 0.8rem 1rem;
+      border-radius: var(--border-radius-md);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .mobile-menu .navbar-link:hover {
+      background-color: var(--fruit-green-medium);
+    }
+  }
+  
